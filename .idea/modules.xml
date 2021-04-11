@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/01.Spring快速入门/01.Spring快速入门.iml" filepath="$PROJECT_DIR$/01.Spring快速入门/01.Spring快速入门.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02.Spring配置文件/02.Spring配置文件.iml" filepath="$PROJECT_DIR$/02.Spring配置文件/02.Spring配置文件.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03.Spring配置数据源/03.Spring配置数据源.iml" filepath="$PROJECT_DIR$/03.Spring配置数据源/03.Spring配置数据源.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04.注解开发/04.注解开发.iml" filepath="$PROJECT_DIR$/04.注解开发/04.注解开发.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05.Spring集成Junit/05.Spring集成Junit.iml" filepath="$PROJECT_DIR$/05.Spring集成Junit/05.Spring集成Junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/itheima-Spring.iml" filepath="$PROJECT_DIR$/.idea/itheima-Spring.iml" />
     </modules>
   </component>

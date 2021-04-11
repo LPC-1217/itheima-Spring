@@ -1,0 +1,14 @@
+3.1 原始Junit测试Spring的问题
+    在测试类中，每个测试方法都有如下两行代码：
+        ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserDao userDao = (UserDao) app.getBean("userDao");
+    这两行代码的作用是获取容器，如果不写的话，直接会提示空指针异常，所以不能轻易删掉。
+3.2 解决上述问题的思路
+    让SpringJunit负责创建Junit容器，但是需要将配置文件的名称告诉它。
+    将需要进行测试Bean直接在测试类中进行注入
+3.3 Spring集成Junit步骤
+    1、导入Spring集成Junit的坐标
+    2、使用@Runwith注解替代原来的运行期
+    3、使用@ContextConfiguration指定配置文件或配置类
+    4、使用@Autowired注入需要测试的对象
+    5、创建测试方法进行测试

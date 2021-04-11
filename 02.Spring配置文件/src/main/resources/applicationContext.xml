@@ -4,13 +4,13 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl" scope="singleton">
+    <!--<bean id="userDao" class="com.UserDaoImpl" scope="singleton">
         &lt;!&ndash;基本数据类型注入&ndash;&gt;
         <property name="username" value="zhangsan"/>
         <property name="age" value="18"/>
     </bean>-->
 
-    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl" scope="singleton">
+    <bean id="userDao" class="com.UserDaoImpl" scope="singleton">
         <property name="strList">
             <list>
                 <value>aaa</value>
@@ -43,23 +43,23 @@
         <property name="name" value="lucy"/>
         <property name="addr" value="dalian"/>
     </bean>
-<!--    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl" scope="prototype" init-method="init" destroy-method="destory"/>-->
+<!--    <bean id="userDao" class="com.UserDaoImpl" scope="prototype" init-method="init" destroy-method="destory"/>-->
     <!--工厂静态方法实例化-->
 <!--    <bean id="userDao" class="com.itheima.factory.StaticFactory" factory-method="getUserDao"/>-->
     <!--工厂动态方法实例化-->
 <!--    <bean id="factory" class="com.itheima.factory.DynamicFactory"/>-->
 <!--    <bean id="userDao" factory-bean="factory" factory-method="getUserDao"/>-->
 
-  <!--  <bean id="userService" class="com.itheima.service.impl.UserServiceImpl">
+  <!--  <bean id="userService" class="com.UserServiceImpl">
         &lt;!&ndash;set方法注入配置&ndash;&gt;
         <property name="userDao" ref="userDao"/>
     </bean>-->
 
     <!--set方法注入的简便方式-->
-<!--    <bean id="userService" class="com.itheima.service.impl.UserServiceImpl" p:userDao-ref="userDao"/>-->
+<!--    <bean id="userService" class="com.UserServiceImpl" p:userDao-ref="userDao"/>-->
 
     <!--有参构造方法注入-->
-    <bean id="userService" class="com.itheima.service.impl.UserServiceImpl">
+    <bean id="userService" class="com.UserServiceImpl">
         <constructor-arg name="userDao" ref="userDao"/>
     </bean>
 </beans>
