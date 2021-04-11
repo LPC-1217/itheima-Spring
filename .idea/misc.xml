@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/03.Spring配置数据源/pom.xml" />
         <option value="$PROJECT_DIR$/04.注解开发/pom.xml" />
         <option value="$PROJECT_DIR$/05.Spring集成Junit/pom.xml" />
+        <option value="$PROJECT_DIR$/06.Spring的AOP简介/pom.xml" />
       </list>
     </option>
   </component>
