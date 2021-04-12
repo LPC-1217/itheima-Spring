@@ -11,9 +11,10 @@
         <module name="03.Spring配置数据源" />
         <module name="05.Spring集成Junit" />
         <module name="06.Spring的AOP简介" />
+        <module name="07.基于xml的AOP开发" />
         <module name="02.Spring配置文件" />
         <module name="01.Spring快速入门" />
-        <module name="07.基于xml的AOP开发" />
+        <module name="09.Spring JdbcTemplate基本使用" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +26,7 @@
       <module name="06.Spring的AOP简介" target="1.5" />
       <module name="07.基于xml的AOP开发" target="1.5" />
       <module name="08.基于注解的AOP开发" target="1.5" />
+      <module name="09.Spring JdbcTemplate基本使用" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

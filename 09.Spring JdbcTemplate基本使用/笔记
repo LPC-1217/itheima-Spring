@@ -1,0 +1,8 @@
+1.1 JdbcTemplate概述
+    它是Spring框架中提供的一个对象，是对原始繁琐的JdbcAPI对象的简单封装，spring框架为我们提供了很多的操作模板类。
+    例如：操作关系型数据库的JdbcTemplate和HibernateTemplate，操作nosql数据库的RedisTemplate，操作消息队列的JmsTemplate等
+1.2 JdbcTemplate开发步骤
+    1.导入spring-jdbc和spring-tx坐标
+    2.创建数据库表和实体类
+    3.创建jdbcTemplate对象
+    4.执行数据库操作

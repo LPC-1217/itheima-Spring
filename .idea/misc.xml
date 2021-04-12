@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/06.Spring的AOP简介/pom.xml" />
         <option value="$PROJECT_DIR$/07.基于xml的AOP开发/pom.xml" />
         <option value="$PROJECT_DIR$/08.基于注解的AOP开发/pom.xml" />
+        <option value="$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/pom.xml" />
       </list>
     </option>
   </component>

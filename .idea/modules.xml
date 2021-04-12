@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/06.Spring的AOP简介/06.Spring的AOP简介.iml" filepath="$PROJECT_DIR$/06.Spring的AOP简介/06.Spring的AOP简介.iml" />
       <module fileurl="file://$PROJECT_DIR$/07.基于xml的AOP开发/07.基于xml的AOP开发.iml" filepath="$PROJECT_DIR$/07.基于xml的AOP开发/07.基于xml的AOP开发.iml" />
       <module fileurl="file://$PROJECT_DIR$/08.基于注解的AOP开发/08.基于注解的AOP开发.iml" filepath="$PROJECT_DIR$/08.基于注解的AOP开发/08.基于注解的AOP开发.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/09.Spring JdbcTemplate基本使用.iml" filepath="$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/09.Spring JdbcTemplate基本使用.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/itheima-Spring.iml" filepath="$PROJECT_DIR$/.idea/itheima-Spring.iml" />
     </modules>
   </component>
