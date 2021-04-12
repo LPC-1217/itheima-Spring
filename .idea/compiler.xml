@@ -12,6 +12,7 @@
         <module name="06.Spring的AOP简介" />
         <module name="02.Spring配置文件" />
         <module name="01.Spring快速入门" />
+        <module name="07.基于xml的AOP开发" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
       <module name="04.注解开发" target="1.5" />
       <module name="05.Spring集成Junit" target="1.5" />
       <module name="06.Spring的AOP简介" target="1.5" />
+      <module name="07.基于xml的AOP开发" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
