@@ -91,3 +91,13 @@
                 }
 1.5 JdbcTemplate的常见操作
     修改操作:
+         @Test
+            public void testUpdate(){
+                jdbcTemplate.update("update account set money=? where name=?",5000,"Tom");
+            }
+    删除操作：
+           @Test
+            public void testDelete(){
+                jdbcTemplate.update("delete from account where name=?","tom");
+            }
+
