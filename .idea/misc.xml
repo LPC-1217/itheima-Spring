@@ -18,7 +18,14 @@
         <option value="$PROJECT_DIR$/07.基于xml的AOP开发/pom.xml" />
         <option value="$PROJECT_DIR$/08.基于注解的AOP开发/pom.xml" />
         <option value="$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/pom.xml" />
+        <option value="$PROJECT_DIR$/10.声明式事务控制/pom.xml" />
+        <option value="$PROJECT_DIR$/10.编程式事务控制相关对象（了解）/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/10.编程式事务控制相关对象/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
