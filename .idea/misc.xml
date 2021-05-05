@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/pom.xml" />
         <option value="$PROJECT_DIR$/10.声明式事务控制/pom.xml" />
         <option value="$PROJECT_DIR$/10.编程式事务控制相关对象（了解）/pom.xml" />
+        <option value="$PROJECT_DIR$/11.基于XML的声明式事务控制/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

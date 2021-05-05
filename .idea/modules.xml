@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/08.基于注解的AOP开发/08.基于注解的AOP开发.iml" filepath="$PROJECT_DIR$/08.基于注解的AOP开发/08.基于注解的AOP开发.iml" />
       <module fileurl="file://$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/09.Spring JdbcTemplate基本使用.iml" filepath="$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/09.Spring JdbcTemplate基本使用.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.编程式事务控制相关对象（了解）/10.编程式事务控制相关对象（了解）.iml" filepath="$PROJECT_DIR$/10.编程式事务控制相关对象（了解）/10.编程式事务控制相关对象（了解）.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11.基于XML的声明式事务控制/11.基于XML的声明式事务控制.iml" filepath="$PROJECT_DIR$/11.基于XML的声明式事务控制/11.基于XML的声明式事务控制.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/itheima-Spring.iml" filepath="$PROJECT_DIR$/.idea/itheima-Spring.iml" />
     </modules>
   </component>
