@@ -1,0 +1,1146 @@
+Index: 12.基于注解的声明式事务控制/src/main/java/com/itheima/dao/impl/AccountDaoImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/java/com/itheima/dao/impl/AccountDaoImpl.java	(date 1620316244823)
++++ 12.基于注解的声明式事务控制/src/main/java/com/itheima/dao/impl/AccountDaoImpl.java	(date 1620316244823)
+@@ -0,0 +1,21 @@
++package com.itheima.dao.impl;
++
++import com.itheima.dao.AccountDao;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.jdbc.core.JdbcTemplate;
++import org.springframework.stereotype.Repository;
++
++@Repository("accountDao")
++public class AccountDaoImpl implements AccountDao {
++
++    @Autowired
++    private JdbcTemplate jdbcTemplate;
++
++    public void out(String outMan, double money) {
++        jdbcTemplate.update("update account set money=money-? where name=?",money,outMan);
++    }
++
++    public void in(String inMan, double money) {
++        jdbcTemplate.update("update account set money=money+? where name=?",money,inMan);
++    }
++}
+Index: .idea/artifacts/11_xml_war.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/artifacts/11_xml_war.xml	(date 1620311120313)
++++ .idea/artifacts/11_xml_war.xml	(date 1620311120313)
+@@ -0,0 +1,14 @@
++<component name="ArtifactManager">
++  <artifact type="war" name="11.基于xml的声明式事务控制:war">
++    <output-path>$PROJECT_DIR$/11.基于xml的声明式事务控制/target</output-path>
++    <properties id="maven-jee-properties">
++      <options>
++        <module>11.基于xml的声明式事务控制</module>
++        <packaging>war</packaging>
++      </options>
++    </properties>
++    <root id="archive" name="11.基于xml的声明式事务控制.war">
++      <element id="artifact" artifact-name="11.基于xml的声明式事务控制:war exploded" />
++    </root>
++  </artifact>
++</component>
+\ No newline at end of file
+Index: .idea/artifacts/11_xml_war_exploded.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/artifacts/11_xml_war_exploded.xml	(date 1620311120321)
++++ .idea/artifacts/11_xml_war_exploded.xml	(date 1620311120321)
+@@ -0,0 +1,39 @@
++<component name="ArtifactManager">
++  <artifact type="exploded-war" name="11.基于xml的声明式事务控制:war exploded">
++    <output-path>$PROJECT_DIR$/11.基于xml的声明式事务控制/target/11.基于xml的声明式事务控制</output-path>
++    <properties id="maven-jee-properties">
++      <options>
++        <exploded>true</exploded>
++        <module>11.基于xml的声明式事务控制</module>
++        <packaging>war</packaging>
++      </options>
++    </properties>
++    <root id="root">
++      <element id="directory" name="WEB-INF">
++        <element id="directory" name="classes">
++          <element id="module-output" name="11.基于xml的声明式事务控制" />
++        </element>
++        <element id="directory" name="lib">
++          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.4" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-test:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
++          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.32" />
++          <element id="library" level="project" name="Maven: junit:junit:4.12" />
++          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
++        </element>
++      </element>
++      <element id="directory" name="META-INF">
++        <element id="file-copy" path="$PROJECT_DIR$/11.基于xml的声明式事务控制/target/11.基于xml的声明式事务控制/META-INF/MANIFEST.MF" />
++      </element>
++      <element id="javaee-facet-resources" facet="11.基于xml的声明式事务控制/web/Web" />
++    </root>
++  </artifact>
++</component>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/encodings.xml	(date 1620315744018)
++++ .idea/encodings.xml	(date 1620315744018)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="file://$PROJECT_DIR$/11.基于xml的声明式事务控制/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/11.基于xml的声明式事务控制/src/main/resources" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/12.基于注解的声明式事务控制/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/12.基于注解的声明式事务控制/src/main/resources" charset="UTF-8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: 02.Spring配置文件/src/main/java/com/itheima/dao/impl/UserDaoImpl.java
+===================================================================
+--- 02.Spring配置文件/src/main/java/com/itheima/dao/impl/UserDaoImpl.java	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ 02.Spring配置文件/src/main/java/com/itheima/dao/UserDaoImpl.java	(date 1620311733010)
+@@ -1,4 +1,4 @@
+-package com.itheima.dao.impl;
++package com.itheima.dao;
+ 
+ import com.itheima.dao.UserDao;
+ import com.itheima.domain.User;
+Index: .idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml	(date 1620311120343)
++++ .idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml	(date 1620311120343)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: c3p0:c3p0:0.9.1.1">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: 04.注解开发/src/test/java/com/itheima/dao/impl/UserDaoImpl.java
+===================================================================
+--- 04.注解开发/src/test/java/com/itheima/dao/impl/UserDaoImpl.java	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ 04.注解开发/src/test/java/com/itheima/dao/UserDaoImpl.java	(date 1620311732994)
+@@ -1,4 +1,4 @@
+-package com.itheima.dao.impl;
++package com.itheima.dao;
+ 
+ import com.itheima.dao.UserDao;
+ import org.springframework.stereotype.Component;
+Index: 01.Spring快速入门/src/main/java/com/itheima/dao/impl/UserDaoImpl.java
+===================================================================
+--- 01.Spring快速入门/src/main/java/com/itheima/dao/impl/UserDaoImpl.java	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ 01.Spring快速入门/src/main/java/com/itheima/dao/UserDaoImpl.java	(date 1620311732979)
+@@ -1,4 +1,4 @@
+-package com.itheima.dao.impl;
++package com.itheima.dao;
+ 
+ import com.itheima.dao.UserDao;
+ 
+Index: 11.基于xml的声明式事务控制/src/main/java/com/itheima/dao/AccountDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于xml的声明式事务控制/src/main/java/com/itheima/dao/AccountDao.java	(date 1620309845906)
++++ 11.基于xml的声明式事务控制/src/main/java/com/itheima/dao/AccountDao.java	(date 1620309845906)
+@@ -0,0 +1,8 @@
++package com.itheima.dao;
++
++public interface AccountDao {
++
++    public void out(String outMan, double money);
++    public void in(String inMan, double money);
++
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ .idea/misc.xml	(date 1620315492829)
+@@ -1,6 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="FrameworkDetectionExcludesConfiguration">
++    <file type="web" url="file://$PROJECT_DIR$/11.基于xml的声明式事务控制" />
++    <file type="web" url="file://$PROJECT_DIR$/12.基于注解的声明式事务控制" />
+     <type id="Spring" />
+   </component>
+   <component name="JavaScriptSettings">
+@@ -20,7 +22,8 @@
+         <option value="$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/pom.xml" />
+         <option value="$PROJECT_DIR$/10.声明式事务控制/pom.xml" />
+         <option value="$PROJECT_DIR$/10.编程式事务控制相关对象（了解）/pom.xml" />
+-        <option value="$PROJECT_DIR$/11.基于XML的声明式事务控制/pom.xml" />
++        <option value="$PROJECT_DIR$/11.基于xml的声明式事务控制/pom.xml" />
++        <option value="$PROJECT_DIR$/12.基于注解的声明式事务控制/pom.xml" />
+       </list>
+     </option>
+     <option name="ignoredFiles">
+Index: 12.基于注解的声明式事务控制/src/main/java/com/itheima/dao/AccountDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/java/com/itheima/dao/AccountDao.java	(date 1620309845906)
++++ 12.基于注解的声明式事务控制/src/main/java/com/itheima/dao/AccountDao.java	(date 1620309845906)
+@@ -0,0 +1,8 @@
++package com.itheima.dao;
++
++public interface AccountDao {
++
++    public void out(String outMan, double money);
++    public void in(String inMan, double money);
++
++}
+Index: 11.基于xml的声明式事务控制/src/main/java/com/itheima/dao/impl/AccountDaoImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于xml的声明式事务控制/src/main/java/com/itheima/dao/impl/AccountDaoImpl.java	(date 1615499596339)
++++ 11.基于xml的声明式事务控制/src/main/java/com/itheima/dao/impl/AccountDaoImpl.java	(date 1615499596339)
+@@ -0,0 +1,20 @@
++package com.itheima.dao.impl;
++
++import com.itheima.dao.AccountDao;
++import org.springframework.jdbc.core.JdbcTemplate;
++
++public class AccountDaoImpl implements AccountDao {
++
++    private JdbcTemplate jdbcTemplate;
++    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
++        this.jdbcTemplate = jdbcTemplate;
++    }
++
++    public void out(String outMan, double money) {
++        jdbcTemplate.update("update account set money=money-? where name=?",money,outMan);
++    }
++
++    public void in(String inMan, double money) {
++        jdbcTemplate.update("update account set money=money+? where name=?",money,inMan);
++    }
++}
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ .idea/compiler.xml	(date 1620315492820)
+@@ -12,11 +12,12 @@
+         <module name="03.Spring配置数据源" />
+         <module name="05.Spring集成Junit" />
+         <module name="06.Spring的AOP简介" />
++        <module name="07.基于xml的AOP开发" />
+         <module name="02.Spring配置文件" />
+         <module name="01.Spring快速入门" />
++        <module name="11.基于xml的声明式事务控制" />
++        <module name="12.基于注解的声明式事务控制" />
+         <module name="09.Spring JdbcTemplate基本使用" />
+-        <module name="11.基于XML的声明式事务控制" />
+-        <module name="07.基于xml的AOP开发" />
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>
+@@ -32,7 +33,9 @@
+       <module name="10.编程式事务控制相关对象" target="1.5" />
+       <module name="10.编程式事务控制相关对象（了解）" target="1.5" />
+       <module name="10.编程式十五控制相关对象" target="1.5" />
++      <module name="11.基于xml的声明式事务控制" target="1.7" />
+       <module name="11.基于XML的声明式事务控制" target="1.5" />
++      <module name="12.基于注解的声明式事务控制" target="1.7" />
+     </bytecodeTargetLevel>
+   </component>
+ </project>
+\ No newline at end of file
+Index: 12.基于注解的声明式事务控制/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/pom.xml	(date 1620315691605)
++++ 12.基于注解的声明式事务控制/pom.xml	(date 1620315691605)
+@@ -0,0 +1,126 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++  <modelVersion>4.0.0</modelVersion>
++
++  <groupId>com.itheima</groupId>
++  <artifactId>12.基于注解的声明式事务控制</artifactId>
++  <version>1.0-SNAPSHOT</version>
++  <packaging>war</packaging>
++
++  <name>12.基于注解的声明式事务控制 Maven Webapp</name>
++  <!-- FIXME change it to the project's website -->
++  <url>http://www.example.com</url>
++
++  <properties>
++    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++    <maven.compiler.source>1.7</maven.compiler.source>
++    <maven.compiler.target>1.7</maven.compiler.target>
++  </properties>
++
++  <dependencies>
++
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-context</artifactId>
++      <version>5.0.5.RELEASE</version>
++    </dependency>
++    <dependency>
++      <groupId>org.aspectj</groupId>
++      <artifactId>aspectjweaver</artifactId>
++      <version>1.8.4</version>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-tx</artifactId>
++      <version>5.0.5.RELEASE</version>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-test</artifactId>
++      <version>5.0.5.RELEASE</version>
++    </dependency>
++    <dependency>
++      <groupId>c3p0</groupId>
++      <artifactId>c3p0</artifactId>
++      <version>0.9.1.1</version>
++    </dependency>
++    <dependency>
++      <groupId>mysql</groupId>
++      <artifactId>mysql-connector-java</artifactId>
++      <version>5.1.32</version>
++    </dependency>
++    <dependency>
++      <groupId>junit</groupId>
++      <artifactId>junit</artifactId>
++      <version>4.12</version>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++      <scope>compile</scope>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++      <scope>compile</scope>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++      <scope>compile</scope>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++      <scope>compile</scope>
++    </dependency>
++  </dependencies>
++
++  <build>
++    <finalName>12.基于注解的声明式事务控制</finalName>
++    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
++      <plugins>
++        <plugin>
++          <artifactId>maven-clean-plugin</artifactId>
++          <version>3.1.0</version>
++        </plugin>
++        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
++        <plugin>
++          <artifactId>maven-resources-plugin</artifactId>
++          <version>3.0.2</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-compiler-plugin</artifactId>
++          <version>3.8.0</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-surefire-plugin</artifactId>
++          <version>2.22.1</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-war-plugin</artifactId>
++          <version>3.2.2</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-install-plugin</artifactId>
++          <version>2.5.2</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-deploy-plugin</artifactId>
++          <version>2.8.2</version>
++        </plugin>
++      </plugins>
++    </pluginManagement>
++  </build>
++</project>
+Index: 02.Spring配置文件/src/main/java/com/itheima/factory/DynamicFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 02.Spring配置文件/src/main/java/com/itheima/factory/DynamicFactory.java	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ 02.Spring配置文件/src/main/java/com/itheima/factory/DynamicFactory.java	(date 1620311733018)
+@@ -1,7 +1,7 @@
+ package com.itheima.factory;
+ 
+ import com.itheima.dao.UserDao;
+-import com.itheima.dao.impl.UserDaoImpl;
++import com.itheima.dao.UserDaoImpl;
+ 
+ public class DynamicFactory {
+     public UserDao getUserDao(){
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ .idea/modules.xml	(date 1620315492857)
+@@ -12,7 +12,8 @@
+       <module fileurl="file://$PROJECT_DIR$/08.基于注解的AOP开发/08.基于注解的AOP开发.iml" filepath="$PROJECT_DIR$/08.基于注解的AOP开发/08.基于注解的AOP开发.iml" />
+       <module fileurl="file://$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/09.Spring JdbcTemplate基本使用.iml" filepath="$PROJECT_DIR$/09.Spring JdbcTemplate基本使用/09.Spring JdbcTemplate基本使用.iml" />
+       <module fileurl="file://$PROJECT_DIR$/10.编程式事务控制相关对象（了解）/10.编程式事务控制相关对象（了解）.iml" filepath="$PROJECT_DIR$/10.编程式事务控制相关对象（了解）/10.编程式事务控制相关对象（了解）.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/11.基于XML的声明式事务控制/11.基于XML的声明式事务控制.iml" filepath="$PROJECT_DIR$/11.基于XML的声明式事务控制/11.基于XML的声明式事务控制.iml" />
++      <module fileurl="file://$PROJECT_DIR$/11.基于xml的声明式事务控制/11.基于xml的声明式事务控制.iml" filepath="$PROJECT_DIR$/11.基于xml的声明式事务控制/11.基于xml的声明式事务控制.iml" />
++      <module fileurl="file://$PROJECT_DIR$/12.基于注解的声明式事务控制/12.基于注解的声明式事务控制.iml" filepath="$PROJECT_DIR$/12.基于注解的声明式事务控制/12.基于注解的声明式事务控制.iml" />
+       <module fileurl="file://$PROJECT_DIR$/.idea/itheima-Spring.iml" filepath="$PROJECT_DIR$/.idea/itheima-Spring.iml" />
+     </modules>
+   </component>
+Index: 02.Spring配置文件/src/main/java/com/itheima/factory/StaticFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 02.Spring配置文件/src/main/java/com/itheima/factory/StaticFactory.java	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ 02.Spring配置文件/src/main/java/com/itheima/factory/StaticFactory.java	(date 1620311733002)
+@@ -1,7 +1,7 @@
+ package com.itheima.factory;
+ 
+ import com.itheima.dao.UserDao;
+-import com.itheima.dao.impl.UserDaoImpl;
++import com.itheima.dao.UserDaoImpl;
+ 
+ public class StaticFactory {
+     public static UserDao getUserDao(){
+Index: 11.基于xml的声明式事务控制/src/main/resources/applicationContext.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于xml的声明式事务控制/src/main/resources/applicationContext.xml	(date 1620314130298)
++++ 11.基于xml的声明式事务控制/src/main/resources/applicationContext.xml	(date 1620314130298)
+@@ -0,0 +1,48 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<beans xmlns="http://www.springframework.org/schema/beans"
++       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++       xmlns:aop="http://www.springframework.org/schema/aop"
++       xmlns:tx="http://www.springframework.org/schema/tx"
++       xsi:schemaLocation="
++       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
++       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
++       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
++">
++
++    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
++        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
++        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test"/>
++        <property name="user" value="root"/>
++        <property name="password" value="123456"/>
++    </bean>
++
++    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
++        <property name="dataSource" ref="dataSource"/>
++    </bean>
++
++    <bean id="accountDao" class="com.itheima.dao.impl.AccountDaoImpl">
++        <property name="jdbcTemplate" ref="jdbcTemplate"/>
++    </bean>
++
++    <!--目标对象 内部的方法就是切点-->
++    <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl">
++        <property name="accountDao" ref="accountDao"/>
++    </bean>
++
++    <!--配置平台事务管理器-->
++    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
++        <property name="dataSource" ref="dataSource"/>
++    </bean>
++
++    <!--通知 事务的增强-->
++    <tx:advice id="txAdvice" transaction-manager="transactionManager">
++        <tx:attributes>
++            <tx:method name="*"/>
++        </tx:attributes>
++    </tx:advice>
++
++    <!--配置事务的织入-->
++    <aop:config>
++        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.itheima.service.impl.*.*(..))"/>
++    </aop:config>
++</beans>
+\ No newline at end of file
+Index: 11.基于xml的声明式事务控制/src/main/java/com/itheima/controller/AccountController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于xml的声明式事务控制/src/main/java/com/itheima/controller/AccountController.java	(date 1620311835058)
++++ 11.基于xml的声明式事务控制/src/main/java/com/itheima/controller/AccountController.java	(date 1620311835058)
+@@ -0,0 +1,15 @@
++package com.itheima.controller;
++
++import com.itheima.service.AccountService;
++import org.springframework.context.ApplicationContext;
++import org.springframework.context.support.ClassPathXmlApplicationContext;
++
++public class AccountController {
++
++    public static void main(String[] args) {
++        ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
++        AccountService accountService = app.getBean(AccountService.class);
++        accountService.transfer("tom","lucy",500);
++    }
++
++}
+Index: 11.基于xml的声明式事务控制/src/main/java/com/itheima/service/AccountService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于xml的声明式事务控制/src/main/java/com/itheima/service/AccountService.java	(date 1620309845901)
++++ 11.基于xml的声明式事务控制/src/main/java/com/itheima/service/AccountService.java	(date 1620309845901)
+@@ -0,0 +1,7 @@
++package com.itheima.service;
++
++public interface AccountService {
++
++    public void transfer(String outMan, String inMan, double money);
++
++}
+Index: 11.基于xml的声明式事务控制/src/main/java/com/itheima/service/impl/AccountServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于xml的声明式事务控制/src/main/java/com/itheima/service/impl/AccountServiceImpl.java	(date 1620313732155)
++++ 11.基于xml的声明式事务控制/src/main/java/com/itheima/service/impl/AccountServiceImpl.java	(date 1620313732155)
+@@ -0,0 +1,18 @@
++package com.itheima.service.impl;
++
++import com.itheima.dao.AccountDao;
++import com.itheima.service.AccountService;
++
++public class AccountServiceImpl implements AccountService {
++
++    private AccountDao accountDao;
++    public void setAccountDao(AccountDao accountDao) {
++        this.accountDao = accountDao;
++    }
++
++    public void transfer(String outMan, String inMan, double money) {
++        accountDao.out(outMan,money);
++        int i = 1/0;
++        accountDao.in(inMan,money);
++    }
++}
+Index: 11.基于xml的声明式事务控制/src/main/java/com/itheima/domain/Account.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于xml的声明式事务控制/src/main/java/com/itheima/domain/Account.java	(date 1615499596807)
++++ 11.基于xml的声明式事务控制/src/main/java/com/itheima/domain/Account.java	(date 1615499596807)
+@@ -0,0 +1,23 @@
++package com.itheima.domain;
++
++public class Account {
++
++    private String name;
++    private double money;
++
++    public String getName() {
++        return name;
++    }
++
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    public double getMoney() {
++        return money;
++    }
++
++    public void setMoney(double money) {
++        this.money = money;
++    }
++}
+Index: 05.Spring集成Junit/src/test/java/com/itheima/dao/impl/UserDaoImpl.java
+===================================================================
+--- 05.Spring集成Junit/src/test/java/com/itheima/dao/impl/UserDaoImpl.java	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ 05.Spring集成Junit/src/test/java/com/itheima/dao/UserDaoImpl.java	(date 1620311732986)
+@@ -1,4 +1,4 @@
+-package com.itheima.dao.impl;
++package com.itheima.dao;
+ 
+ import com.itheima.dao.UserDao;
+ import org.springframework.stereotype.Repository;
+Index: 12.基于注解的声明式事务控制/src/main/webapp/index.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/webapp/index.jsp	(date 1620315483779)
++++ 12.基于注解的声明式事务控制/src/main/webapp/index.jsp	(date 1620315483779)
+@@ -0,0 +1,5 @@
++<html>
++<body>
++<h2>Hello World!</h2>
++</body>
++</html>
+Index: 12.基于注解的声明式事务控制/src/main/webapp/WEB-INF/web.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/webapp/WEB-INF/web.xml	(date 1620315483778)
++++ 12.基于注解的声明式事务控制/src/main/webapp/WEB-INF/web.xml	(date 1620315483778)
+@@ -0,0 +1,7 @@
++<!DOCTYPE web-app PUBLIC
++ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
++ "http://java.sun.com/dtd/web-app_2_3.dtd" >
++
++<web-app>
++  <display-name>Archetype Created Web Application</display-name>
++</web-app>
+Index: 12.基于注解的声明式事务控制/12.基于注解的声明式事务控制.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/12.基于注解的声明式事务控制.iml	(date 1620315743999)
++++ 12.基于注解的声明式事务控制/12.基于注解的声明式事务控制.iml	(date 1620315743999)
+@@ -0,0 +1,40 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
++  <component name="FacetManager">
++    <facet type="web" name="Web">
++      <configuration>
++        <descriptors>
++          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
++        </descriptors>
++        <webroots>
++          <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
++        </webroots>
++      </configuration>
++    </facet>
++  </component>
++  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
++    <output url="file://$MODULE_DIR$/target/classes" />
++    <output-test url="file://$MODULE_DIR$/target/test-classes" />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
++      <excludeFolder url="file://$MODULE_DIR$/target" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.4" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-test:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
++    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.32" level="project" />
++    <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
++    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/artifacts/12__war.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/artifacts/12__war.xml	(date 1620315492843)
++++ .idea/artifacts/12__war.xml	(date 1620315492843)
+@@ -0,0 +1,14 @@
++<component name="ArtifactManager">
++  <artifact type="war" name="12.基于注解的声明式事务控制:war">
++    <output-path>$PROJECT_DIR$/12.基于注解的声明式事务控制/target</output-path>
++    <properties id="maven-jee-properties">
++      <options>
++        <module>12.基于注解的声明式事务控制</module>
++        <packaging>war</packaging>
++      </options>
++    </properties>
++    <root id="archive" name="12.基于注解的声明式事务控制.war">
++      <element id="artifact" artifact-name="12.基于注解的声明式事务控制:war exploded" />
++    </root>
++  </artifact>
++</component>
+\ No newline at end of file
+Index: 11.基于xml的声明式事务控制/笔记.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于xml的声明式事务控制/笔记.md	(date 1620263229967)
++++ 11.基于xml的声明式事务控制/笔记.md	(date 1620263229967)
+@@ -0,0 +1,10 @@
++2.1 什么是声明式事务控制
++    
++    Spring的声明式事务控制顾名思义就是采用声明的方式来处理事务，这里所说的声明，就是指在配置文件中声明，用在Spring配置文件中声明式的事务处理来替代代码式的处理事务。
++
++    声明式事务处理的作用
++        事务管理不侵入开发的组件，具体来说，业务逻辑对象就不会意识到正在事务管理中，事实上也应该如此，因为事务管理属于系统层面的服务，而不是业务逻辑的一部分，如果想要改变事务管理策划的话，也只需要在定义文件中重新匹配即可。
++    
++    注意：Spring声明式事务控制底层就是AOP
++    
++    
+\ No newline at end of file
+Index: .idea/artifacts/12__war_exploded.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/artifacts/12__war_exploded.xml	(date 1620315744009)
++++ .idea/artifacts/12__war_exploded.xml	(date 1620315744009)
+@@ -0,0 +1,39 @@
++<component name="ArtifactManager">
++  <artifact type="exploded-war" name="12.基于注解的声明式事务控制:war exploded">
++    <output-path>$PROJECT_DIR$/12.基于注解的声明式事务控制/target/12.基于注解的声明式事务控制</output-path>
++    <properties id="maven-jee-properties">
++      <options>
++        <exploded>true</exploded>
++        <module>12.基于注解的声明式事务控制</module>
++        <packaging>war</packaging>
++      </options>
++    </properties>
++    <root id="root">
++      <element id="directory" name="WEB-INF">
++        <element id="directory" name="classes">
++          <element id="module-output" name="12.基于注解的声明式事务控制" />
++        </element>
++        <element id="directory" name="lib">
++          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.4" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-test:5.0.5.RELEASE" />
++          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
++          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.32" />
++          <element id="library" level="project" name="Maven: junit:junit:4.12" />
++          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
++        </element>
++      </element>
++      <element id="directory" name="META-INF">
++        <element id="file-copy" path="$PROJECT_DIR$/12.基于注解的声明式事务控制/target/12.基于注解的声明式事务控制/META-INF/MANIFEST.MF" />
++      </element>
++      <element id="javaee-facet-resources" facet="12.基于注解的声明式事务控制/web/Web" />
++    </root>
++  </artifact>
++</component>
+\ No newline at end of file
+Index: 11.基于XML的声明式事务控制/11.基于XML的声明式事务控制.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于XML的声明式事务控制/11.基于XML的声明式事务控制.iml	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ 11.基于xml的声明式事务控制/11.基于xml的声明式事务控制.iml	(date 1620314130710)
+@@ -1,15 +1,47 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
++  <component name="FacetManager">
++    <facet type="web" name="Web">
++      <configuration>
++        <descriptors>
++          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
++        </descriptors>
++        <webroots>
++          <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
++        </webroots>
++      </configuration>
++    </facet>
++    <facet type="Spring" name="Spring">
++      <configuration>
++        <fileset id="fileset" name="ApplicationContext" removed="false">
++          <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
++        </fileset>
++      </configuration>
++    </facet>
++  </component>
++  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+     <output url="file://$MODULE_DIR$/target/classes" />
+     <output-test url="file://$MODULE_DIR$/target/test-classes" />
+     <content url="file://$MODULE_DIR$">
+       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+       <excludeFolder url="file://$MODULE_DIR$/target" />
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.4" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.springframework:spring-test:5.0.5.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
++    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.32" level="project" />
++    <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
++    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: 12.基于注解的声明式事务控制/src/main/java/com/itheima/controller/AccountController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/java/com/itheima/controller/AccountController.java	(date 1615499597024)
++++ 12.基于注解的声明式事务控制/src/main/java/com/itheima/controller/AccountController.java	(date 1615499597024)
+@@ -0,0 +1,15 @@
++package com.itheima.controller;
++
++import com.itheima.service.AccountService;
++import org.springframework.context.ApplicationContext;
++import org.springframework.context.support.ClassPathXmlApplicationContext;
++
++public class AccountController {
++
++    public static void main(String[] args) {
++        ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
++        AccountService accountService = app.getBean(AccountService.class);
++        accountService.transfer("tom","lucy",500);
++    }
++
++}
+Index: 12.基于注解的声明式事务控制/src/main/java/com/itheima/service/AccountService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/java/com/itheima/service/AccountService.java	(date 1620315968175)
++++ 12.基于注解的声明式事务控制/src/main/java/com/itheima/service/AccountService.java	(date 1620315968175)
+@@ -0,0 +1,7 @@
++package com.itheima.service;
++
++public interface AccountService {
++
++    public void transfer(String outMan, String inMan, double money);
++
++}
+Index: 12.基于注解的声明式事务控制/src/main/java/com/itheima/service/impl/AccountServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/java/com/itheima/service/impl/AccountServiceImpl.java	(date 1620316704661)
++++ 12.基于注解的声明式事务控制/src/main/java/com/itheima/service/impl/AccountServiceImpl.java	(date 1620316704661)
+@@ -0,0 +1,23 @@
++package com.itheima.service.impl;
++
++import com.itheima.dao.AccountDao;
++import com.itheima.service.AccountService;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Isolation;
++import org.springframework.transaction.annotation.Propagation;
++import org.springframework.transaction.annotation.Transactional;
++
++@Service("accountService")
++public class AccountServiceImpl implements AccountService {
++
++    @Autowired
++    private AccountDao accountDao;
++
++    @Transactional(isolation = Isolation.READ_COMMITTED,propagation = Propagation.REQUIRED)
++    public void transfer(String outMan, String inMan, double money) {
++        accountDao.out(outMan,money);
++        int i = 1/0;
++        accountDao.in(inMan,money);
++    }
++}
+Index: 12.基于注解的声明式事务控制/src/main/java/com/itheima/domain/Account.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/java/com/itheima/domain/Account.java	(date 1615499596807)
++++ 12.基于注解的声明式事务控制/src/main/java/com/itheima/domain/Account.java	(date 1615499596807)
+@@ -0,0 +1,23 @@
++package com.itheima.domain;
++
++public class Account {
++
++    private String name;
++    private double money;
++
++    public String getName() {
++        return name;
++    }
++
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    public double getMoney() {
++        return money;
++    }
++
++    public void setMoney(double money) {
++        this.money = money;
++    }
++}
+Index: 11.基于XML的声明式事务控制/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 11.基于XML的声明式事务控制/pom.xml	(revision 63ce3d99107b24bb30cc16416366c90f3782bbf6)
++++ 11.基于xml的声明式事务控制/pom.xml	(date 1620311102024)
+@@ -1,12 +1,125 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<project xmlns="http://maven.apache.org/POM/4.0.0"
+-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+-    <modelVersion>4.0.0</modelVersion>
++
++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++  <modelVersion>4.0.0</modelVersion>
+ 
+-    <groupId>com.itheima</groupId>
+-    <artifactId>11.基于XML的声明式事务控制</artifactId>
+-    <version>1.0-SNAPSHOT</version>
++  <groupId>com.itheima</groupId>
++  <artifactId>11.基于xml的声明式事务控制</artifactId>
++  <version>1.0-SNAPSHOT</version>
++  <packaging>war</packaging>
++
++  <name>11.基于xml的声明式事务控制 Maven Webapp</name>
++  <!-- FIXME change it to the project's website -->
++  <url>http://www.example.com</url>
+ 
++  <properties>
++    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++    <maven.compiler.source>1.7</maven.compiler.source>
++    <maven.compiler.target>1.7</maven.compiler.target>
++  </properties>
+ 
+-</project>
+\ No newline at end of file
++  <dependencies>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-context</artifactId>
++      <version>5.0.5.RELEASE</version>
++    </dependency>
++    <dependency>
++      <groupId>org.aspectj</groupId>
++      <artifactId>aspectjweaver</artifactId>
++      <version>1.8.4</version>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-tx</artifactId>
++      <version>5.0.5.RELEASE</version>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-test</artifactId>
++      <version>5.0.5.RELEASE</version>
++    </dependency>
++    <dependency>
++      <groupId>c3p0</groupId>
++      <artifactId>c3p0</artifactId>
++      <version>0.9.1.1</version>
++    </dependency>
++    <dependency>
++      <groupId>mysql</groupId>
++      <artifactId>mysql-connector-java</artifactId>
++      <version>5.1.32</version>
++    </dependency>
++    <dependency>
++      <groupId>junit</groupId>
++      <artifactId>junit</artifactId>
++      <version>4.12</version>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++      <scope>compile</scope>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++      <scope>compile</scope>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++      <scope>compile</scope>
++    </dependency>
++    <dependency>
++      <groupId>org.springframework</groupId>
++      <artifactId>spring-jdbc</artifactId>
++      <version>5.0.5.RELEASE</version>
++      <scope>compile</scope>
++    </dependency>
++  </dependencies>
++
++  <build>
++    <finalName>11.基于xml的声明式事务控制</finalName>
++    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
++      <plugins>
++        <plugin>
++          <artifactId>maven-clean-plugin</artifactId>
++          <version>3.1.0</version>
++        </plugin>
++        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
++        <plugin>
++          <artifactId>maven-resources-plugin</artifactId>
++          <version>3.0.2</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-compiler-plugin</artifactId>
++          <version>3.8.0</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-surefire-plugin</artifactId>
++          <version>2.22.1</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-war-plugin</artifactId>
++          <version>3.2.2</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-install-plugin</artifactId>
++          <version>2.5.2</version>
++        </plugin>
++        <plugin>
++          <artifactId>maven-deploy-plugin</artifactId>
++          <version>2.8.2</version>
++        </plugin>
++      </plugins>
++    </pluginManagement>
++  </build>
++</project>
+Index: 12.基于注解的声明式事务控制/src/main/resources/applicationContext.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 12.基于注解的声明式事务控制/src/main/resources/applicationContext.xml	(date 1620316625316)
++++ 12.基于注解的声明式事务控制/src/main/resources/applicationContext.xml	(date 1620316625316)
+@@ -0,0 +1,36 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<beans xmlns="http://www.springframework.org/schema/beans"
++       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++       xmlns:aop="http://www.springframework.org/schema/aop"
++       xmlns:tx="http://www.springframework.org/schema/tx"
++       xmlns:context="http://www.springframework.org/schema/context"
++       xsi:schemaLocation="
++       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
++       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
++       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
++       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
++">
++
++    <!--组件扫描-->
++    <context:component-scan base-package="com.itheima"/>
++
++    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
++        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
++        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test"/>
++        <property name="user" value="root"/>
++        <property name="password" value="123456"/>
++    </bean>
++
++    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
++        <property name="dataSource" ref="dataSource"/>
++    </bean>
++
++
++    <!--配置平台事务管理器-->
++    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
++        <property name="dataSource" ref="dataSource"/>
++    </bean>
++
++    <!--事务的注解驱动-->
++    <tx:annotation-driven transaction-manager="transactionManager"/>
++</beans>
+\ No newline at end of file
