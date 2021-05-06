@@ -1,4 +1,4 @@
-package com.itheima.dao.impl;
+package com.itheima.dao;
 
 import com.itheima.dao.UserDao;
 import org.springframework.stereotype.Repository;

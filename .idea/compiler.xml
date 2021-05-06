@@ -12,11 +12,12 @@
         <module name="03.Spring配置数据源" />
         <module name="05.Spring集成Junit" />
         <module name="06.Spring的AOP简介" />
+        <module name="07.基于xml的AOP开发" />
         <module name="02.Spring配置文件" />
         <module name="01.Spring快速入门" />
+        <module name="11.基于xml的声明式事务控制" />
+        <module name="12.基于注解的声明式事务控制" />
         <module name="09.Spring JdbcTemplate基本使用" />
-        <module name="11.基于XML的声明式事务控制" />
-        <module name="07.基于xml的AOP开发" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -32,7 +33,9 @@
       <module name="10.编程式事务控制相关对象" target="1.5" />
       <module name="10.编程式事务控制相关对象（了解）" target="1.5" />
       <module name="10.编程式十五控制相关对象" target="1.5" />
+      <module name="11.基于xml的声明式事务控制" target="1.7" />
       <module name="11.基于XML的声明式事务控制" target="1.5" />
+      <module name="12.基于注解的声明式事务控制" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
